@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    require 'connection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +23,7 @@
                     <h5 class="modal-title" id="addStudentLabel">Add Student</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="Controller/add-student.php" method="POST">
+                <form action="Controller/add-student.php" method="POST" autocomplete="off">
                     <div class="modal-body">
                         <div id="errorMessage" class="alert alert-warning d-none"></div>
                         <div class="mb-3">
@@ -59,7 +63,7 @@
                     <h5 class="modal-title" id="editStudentLabel">Edit Student</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form id="editStudentForm" action="Controller/edit-student.php" method="post">
+                <form id="editStudentForm" action="Controller/edit-student.php" method="post" autocomplete="off">
                     <div class="modal-body">
                         <div id="errorMessageUpdate" class="alert alert-warning d-none"></div>
 
@@ -123,6 +127,7 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-12">
+            <?php include('message.php'); ?>
                 <div class="card">
                     <div class="card-header">
                         <h4>Student CRUD Application

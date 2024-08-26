@@ -24,13 +24,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bind_param("ssss", $name, $email, $address, $status);
 
         if ($stmt->execute()) {
-            $_SESSION['message'] = "Student Added Successfully";
+            $_SESSION['message'] = "Student Added Successfully !";
             header("Location:../index.php");
              exit();
 
         }
          else {
-            $_SESSION['message'] = "Student Not Added";
+            $_SESSION['message_error'] = "Student Not Added !";
             header("Location:../index.php");
             exit();
         }

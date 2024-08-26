@@ -10,11 +10,11 @@ if (isset($_POST['deletedata'])) {
     $stmt->bind_param("i", $student_id);
 
     if ($stmt->execute()) {
-        $_SESSION['message'] = "Student record deleted successfully!";
+        $_SESSION['message'] = "Student record deleted successfully !";
         header("Location: ../index.php");
         exit(0);
     } else {
-        $_SESSION['message'] = "Failed to delete student record!";
+        $_SESSION['message_error'] = "Failed to delete student record !";
         header("Location: ../index.php");
         exit(0);
     }

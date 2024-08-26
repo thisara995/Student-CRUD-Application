@@ -15,11 +15,11 @@ if (isset($_POST['update'])) {
     $stmt->bind_param("ssssi", $name, $email, $address, $status, $id);
 
     if ($stmt->execute()) {
-        $_SESSION['message'] = "Student data updated successfully";
+        $_SESSION['message'] = "Student data updated successfully !";
         header("Location: ../index.php");
         exit();
     } else {
-        $_SESSION['message'] = "Student data not updated";
+        $_SESSION['message_error'] = "Student data not updated !";
         header("Location: ../index.php");
         exit();
     }
